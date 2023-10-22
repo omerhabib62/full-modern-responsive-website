@@ -33,6 +33,36 @@ h4{
     color: #283d50;
 }
 
+// Animation
+@keyframes slide-in {
+    0% {
+        transform: translateX(300px);
+    }
+
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-out {
+    0% {
+        transform: translateX(0);
+    }
+
+    100%{
+        transform: translateX(300px);
+    }
+}
+
+.slide-in{
+    animation: slide-in 500ms ease;
+}
+
+.slide-out{
+    animation: slide-out 500ms ease;
+}
+
+
 //Multiple section styles
 .about,
 .services,
@@ -40,7 +70,9 @@ h4{
 .photo-gallery,
 .testimonials,
 .team,
-.clients
+.clients,
+.contact-us,
+footer
 {
     padding: 50px 20px;
     @media (min-width: 900px) {
@@ -48,6 +80,83 @@ h4{
     }
 }
 
+//Modal
+
+.modal-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 4;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, 0.5);
+
+
+    .modal{
+        text-align: center;
+        padding: 50px;
+        border-radius: 8px;
+        background-color: #fff;
+
+        img{
+            width: 200px;
+            height: auto;
+            margin-bottom: 16px;
+        }
+
+        p:nth-child(2){
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .btn{
+            margin-top: 24px;
+
+            &:hover{
+                border-color: #007bff;
+                color: #007bff;
+            }
+        }
+    }
+}
+
+//Mobile Nav
+.mobile-bg{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    right: 0;
+
+    i{
+        position: absolute;
+        color: #fff;
+        left: 20px;
+        top: 20px;
+        font-size: 24px;
+    }
+
+    ul{
+        position: absolute;
+        padding: 20px;
+        width: 300px;
+        right: 0;
+        background-color: rgba(0, 123, 255, 0.7);
+        height: 100%;
+    }
+
+    a{
+        color: #fff;
+        font-weight: 500;
+    }
+
+    li{
+        padding: 10px 0;
+    }
+}
 
 // nav
 
@@ -65,12 +174,23 @@ header{
         padding: 25px 10px;
         
         img{
-            height: 23px;
+            height: 25px;
+        }
+
+        i{
+            z-index: 6;
+            font-size: 24px;
+            flex: 1;
+            text-align: right;
+            @media (min-width: 800px) {
+                display:none !important;
+            }
         }
 
         ul{
             flex: 1;
             justify-content: flex-end;
+            display: none;
             @media (min-width: 800px){
                 display:flex
             }
@@ -759,10 +879,115 @@ header{
     }
 }
 
+//Contact Us 
+.contact-us{
+    h2,
+    p{
+        text-align: center;
+    }
+
+    p{
+       margin-bottom: 60px; 
+    }
+
+    input,
+    button{
+        display: block;
+    }
+
+    input,
+    textarea{
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ced4da;
+        
+        &:focus{
+            outline: none;
+        }
+    }
+
+    input{
+        margin-bottom: 16px;
+    }
+
+    textarea{
+        height: 100%;
+        resize: none;
+    }
+
+    form{
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .flex-row{
+        flex-direction: column;
+        @media (min-width: 500px) {
+            flex-direction: row;
+            gap: 32px;
+        }
+    }
+
+    .btn{
+        margin-top: 16px;
+        font-weight: 400;
+        &:hover{
+            color: #007bff;
+            border-color: #007bff;
+        }
+    }
+}
+
+//Footer
+footer{
+    color: #fff;
+    background-color: #004a99;
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    ul{
+        margin-bottom: 32px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    li{
+        padding: 0 15px;
+        margin-bottom: 16px;
+
+    }
+    
+    a{
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+
+    }
+
+    i{
+        cursor: pointer;
+        font-size: 30px;
+    }
+
+    p{
+        text-align: center;
+    }
+
+
+}
+
 //utility classes
 .container{
     max-width: 1140px ;
     margin: 0 auto;
+}
+
+.display-none{
+    display: none;
 }
 
 .flex-row{

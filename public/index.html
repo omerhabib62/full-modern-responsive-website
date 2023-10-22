@@ -11,27 +11,53 @@
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
+    <!-- Contact Modal -->
+    <div class="modal-wrap display-none">
+       <div class="modal">
+          <img src="img/contact-thank-you.svg" alt="">
+          <p>Thank you for you submission!</p>
+          <p>We will be back in touch in 24-48 hours.</p>
+          <button class="btn modal-close">Close</button>
+       </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-bg display-none">
+      <i class="far fa-times-circle"></i>
+      <ul class="mobile-nav">
+        <li><a href="#hero">Home</a></li>   
+        <li><a href="#about-us">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+      </ul>
+    </div>
+
     <!-- Nav -->
     <header>
         <nav class="container">
             <a href="">
                 <img src="img/logo.png" alt="">
             </a>
+            <i class="fas fa-bars"></i>
             <ul>
-                <li><a href="#">Home</a></li>   
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="#hero">Home</a></li>   
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact-us">Contact Us</a></li>
 
             </ul>
         </nav>
     </header>
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="container flex-row">
             <div class="left">
                 <h2>
@@ -47,7 +73,7 @@
     </section>
 
     <!-- About Us -->
-    <section class="about about-1">
+    <section class="about about-1" id="about-us">
         <div class="container">
             <h2>About us</h2>
             <div class="flex-row">
@@ -117,7 +143,7 @@
     </section>
 
     <!-- Services -->
-    <section class="services">
+    <section class="services" id="services">
         <div class="container">
           <h2>Services</h2>
           <div class="grid">
@@ -407,7 +433,7 @@
     </section>
     
     <!-- Team -->
-    <section class="team">
+    <section class="team" id="team">
       <div class="container">
         <h2>Team</h2>
         <div class="flex-row">
@@ -481,8 +507,51 @@
     </section>
 
     <!-- Contact Us -->
-    
+    <section class="contact-us" id="contact-us">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>Want to work with is on a future project? Fill out the form below to get started!</p>
+        <form class="contact-form">
+          <div class="flex-row">
+            <input type="search" class="full-name" placeholder="Your Name">
+            <input type="search" class="email-address" placeholder="Your Email">
+          </div>
+          <input type="search" class="subject" placeholder="Subject">
+          <textarea class="message" placeholder="Message"></textarea>
+          <button class="btn submit-form" type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
 
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <ul class="flex-row">
+          <li><a href="#hero">Home</a></li>   
+          <li><a href="#about-us">About Us</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#contact-us">Contact Us</a></li>
+        </ul>
+        <ul class="flex-row">
+          <li>
+            <i class="fab fa-youtube"></i>
+          </li>
+          <li>
+            <i class="fab fa-twitter"></i>
+          </li>
+          <li>
+            <i class="fab fa-instagram"></i>
+          </li>
+          <li>
+            <i class="fab fa-facebook"></i>
+          </li>
+        </ul>
+        <p>&copy; 2030 NewBiz</p>
+      </div>
+    </footer>
+    
+    <script src="firebase/firebase.js"></script>
     <script src="owl-carousel/jquery.min.js"></script>
     <script src="owl-carousel/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
